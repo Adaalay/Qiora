@@ -1,7 +1,7 @@
 const img = document.querySelector('#imgF');
         const panel = document.querySelector('.img-container');
         const spacer = document.querySelector('.img-container');
-        const maxFrame =125;
+        const maxFrame =88;
 
         let spacerTop;
         let spacerHeight;
@@ -528,3 +528,4 @@ const img = document.querySelector('#imgF');
     });
 
 })();
+
