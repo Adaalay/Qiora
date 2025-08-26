@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UFT-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Qiora es una empresa dedicada a la creación de animaciones y efectos visuales.">
+    <title>Qiora</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="JsPrincipal.js" defer></script>
+
+</head>
+<style>
+    /* familia de letras */
+    @font-face {
+        font-family: 'Gordita-Light';
+        src: url('../Qiora/Gordita/Gordita-Light.ttf') format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Gordita-Regular';
+        src: url('../Qiora/Gordita/Gordita-Regular.ttf') format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Gordita-Bold';
+        src: url('../Qiora/Gordita/Gordita-Bold.ttf') format('truetype');
+    }
+
+    /* cuerpo */
+    html {
+        scroll-behavior: smooth;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+        font-family: 'Gordita-Regular', sans-serif;
+        background-color: white;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    /* encabezado */
+    .header-h {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .nav-h {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .a-h {
+        text-decoration: none;
+        color: #000;
+        text-align: center;
+        padding: 10px;
+        font-size: 1.08rem;
+    }
+
+    .a-h:hover {
+        background-color: #f0f0f0;
+        border-radius: 50px;
+        transform: scale(1.05);
+        transition: transform 0.1s;
+    }
+
+    .a-h:active {
+        transform: scale(0.90);
+        transition: transform 0.1s;
+    }
+
+    /* QFondo */
+    #divFondo {
+        display: flex;
+        background-image: url('../Qiora/img/Q.png');
+        background-position: right;
+        background-size: contain;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+    }
+
+    /*video*/
+    .contenido {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        max-width: 1000px;
+        width: 90%;
+        margin: auto;
+        padding: 28vh 0;
+    }
+
+    /* Logo */
+    .logo {
+        width: clamp(550px, 40vw, 1000px);
+        height: auto;
+        slide-in-elliptic-left-fwd: 1s ease-out;
+    }
+
+    /* seccionAnimación */
+    .panel {
+        height: 150vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        background-color: white;
+    }
+
+    .img-container {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #imgF {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Contenido que se superpone al video */
+    .content-overlay {
+        position: relative;
+    }
+
+    .intro {
+        background-color: transparent;
+    }
+
+    .spacer {
+        height: 100vh;
+        background: transparent;
+    }
+    .unidadesNegocio {
+        height: 100vh;
+        background-color: pink;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    @-webkit-keyframes slide-in-elliptic-left-fwd {
+  0% {
+    -webkit-transform: translateX(-800px) rotateY(30deg) scale(0);
+            transform: translateX(-800px) rotateY(30deg) scale(0);
+    -webkit-transform-origin: -100% 50%;
+            transform-origin: -100% 50%;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0) rotateY(0) scale(1);
+            transform: translateX(0) rotateY(0) scale(1);
+    -webkit-transform-origin: 1800px 50%;
+            transform-origin: 1800px 50%;
+    opacity: 1;
+  }
+}
+</style>
+
+<body>
+    <header class="header-h">
+        <nav class="nav-h">
+            <a class="a-h" href="#idunidadNegocio">Unidades de negocio</a>
+            <a class="a-h" href="#idNosotros">Nosotros</a>
+            <a class="a-h" href="#contacto">Contacto</a>
+        </nav>
+    </header>
+    <section class="inicio">
+        <div id="divFondo">
+            <div class="contenido">
+                <video autoplay muted playsinline class="logo">
+                    <source src="../Qiora/img/QioraMovida.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
+    <section class="panel">
+        <div class="img-container">
+            <img src="../Qiora/QioraTelefono/00001.png" alt="imagenTelefono" id="imgF">
+        </div>
+        <!-- Contenido que se superpone -->
+        <div class="content-overlay">
+            <section class="panel intro">
+            </section>
+
+            <!-- Espaciador transparente donde se ve el video completo  -->
+            <section class="spacer"></section>
+
+        </div>
+    </section>
+    <section class "unidadesNegocio" id="idunidadNegocio">
+        <div id="idUnidadNegocio" class="divUnidaNegocio">
+        <div class="contenedor" id="contenedor">
+            <div id="circulo"></div>
+            <div class="fondo visible" id="fondo0"
+                style="background-image: url('../Qiora/img/Fondo/uno_conecta_img.png');"></div>
+            <div class="fondo" id="fondo1" style="background-image: url('../Qiora/img/Fondo/dos_telecom_img.png');">
+            </div>
+            <div class="fondo" id="fondo2" style="background-image: url('../Qiora/img/Fondo/tres_infra_img.png');">
+            </div>
+            <div class="fondo" id="fondo3" style="background-image: url('../Qiora/img/Fondo/cuatro_capital_img.png');">
+            </div>
+        </div>
+        <!-- Botones -->
+        <div class="botones">
+            <button id="btn0">Conecta</button>
+            <button id="btn1">Telecom</button>
+            <button id="btn2">Infraestructura</button>
+            <button id="btn3">Capital</button>
+        </div>
+        <div class="texto" id="contenedorTexto">
+            <div class="titulo-logo" id="titulo">
+                <img src="../Qiora/titulo/Qiora_Conecta.png" alt="Qiora Conecta" class="titulo-logo-img">
+            </div>
+            <p id="cuadroTexto">En Conecta, facilitamos la conectividad del futuro a millones de personas y empresas mediante infraestructura, talento humano y herramientas para instalaciones de fibra óptica en varios estados del país.</p>
+        </div>
+    </div>
+    </section>
+
+
+    <script>
+    </script>
+</body>
+
+</html>
