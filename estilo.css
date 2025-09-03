@@ -1307,7 +1307,7 @@ height: 100vh;
         transform-origin: 1800px 50%;
         opacity: 1;
     }
-}
+}*/
 
 @keyframes orbt1 {
     0% {
@@ -1337,4 +1337,5 @@ height: 100vh;
     100% {
         transform: rotate(360deg) translateX(25px) rotate(-360deg);
     }
-} */
+
+} 
