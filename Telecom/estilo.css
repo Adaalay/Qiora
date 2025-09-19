@@ -523,17 +523,17 @@ body {
 
 /* ====== ORIGINAL ====== */
 /* Todas las imágenes empiezan invisibles */
-div {
+/* div {
     opacity: 0;
     transform: translateY(10px); 
     transition: opacity 0.3s ease-out, transform 0.3s ease-out; 
 }
 
-/* Cuando entran al viewport */
+/* Cuando entran al viewport 
 div.show {
     opacity: 1;
     transform: translateY(0);
-}
+} */
 
 
 
