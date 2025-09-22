@@ -127,15 +127,12 @@ body {
 /* SECCIÓN 4 · QFONDO Y VIDEO / PANEL */
 /* ==================================== */
 
-#divFondo {
+/* #divFondo {
     display: flex;
-    background-image: url('../Qiora/img/Q.png');
     background-position: right;
     background-size: contain;
     background-repeat: no-repeat;
     min-height: 100vh;
-}
-
 .contenido {
     display: flex;
     flex-direction: column;
@@ -145,7 +142,59 @@ body {
     width: 90%;
     margin: auto;
     padding: 28vh 0;
+} */
+
+/* Sección inicio */
+.inicio {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* toda la ventana */
+    overflow: hidden;
 }
+
+/* Video de fondo */
+#video_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* ajusta el video sin deformarlo */
+    z-index: -1;
+    /* detrás del contenido */
+}
+
+/* Contenedor opcional para centrar contenido */
+#divFondo {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+}
+
+/* Contenido encima del video */
+.contenido {
+    position: relative;
+    z-index: 1;
+    /* text-align: justify; */
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    /* background: rgba(0, 0, 0, 0.3); */
+    /* padding: 20px; */
+    border-radius: 8px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.QioraFondo {
+    width: 37%;
+    z-index: 1;
+    margin: 0;
+    display: flex;
+}
+
 
 
 /* seccionAnimación */
@@ -160,10 +209,13 @@ body {
 
 .img-container {
     position: sticky;
-    top: 50%;              /* en el centro */
-    transform: translateY(-50%); /* corrección vertical */
+    top: 50%;
+    /* en el centro */
+    transform: translateY(-50%);
+    /* corrección vertical */
     width: 100%;
-    height: auto;          /* que se ajuste */
+    height: auto;
+    /* que se ajuste */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -763,42 +815,7 @@ body {
     box-shadow: 0 10px 25px rgba(186, 13, 13, 0.4);
 }
 
-/* ========================================= */
-/* SECCIÓN 13 · MEDIA QUERIES (Responsive) */
-/* ========================================= */
 
-@media (max-width: 768px) {
-    .divUnidaNegocio {
-        display: none;
-    }
-
-    .catalogo-celular-div {
-        display: flex;
-    }
-}
-
-@media (min-width: 769px) {
-    .catalogo-celular-div {
-        display: none;
-    }
-
-    .divUnidaNegocio {
-        display: flex;
-    }
-}
-
-@media (hover: none) and (pointer: coarse) {
-
-    .imagen-circular:hover,
-    .circulo-celular:hover,
-    .botones button:hover,
-    .botones-Celular button:hover {
-        -webkit-transform: none !important;
-        -moz-transform: none !important;
-        -ms-transform: none !important;
-        transform: none !important;
-    }
-}
 
 /* ========================================= */
 /* SECCIÓN 14 · @supports (Compatibilidad) */
@@ -1679,5 +1696,57 @@ body {
 
     100% {
         transform: rotate(360deg) translateX(25px) rotate(-360deg);
+    }
+}
+
+/* ========================================= */
+/* SECCIÓN 13 · MEDIA QUERIES (Responsive) */
+/* ========================================= */
+
+@media (max-width: 768px) {
+    .divUnidaNegocio {
+        display: none;
+    }
+
+    .catalogo-celular-div {
+        display: flex;
+    }
+}
+
+@media (min-width: 769px) {
+    .catalogo-celular-div {
+        display: none;
+    }
+
+    .divUnidaNegocio {
+        display: flex;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+
+    .imagen-circular:hover,
+    .circulo-celular:hover,
+    .botones button:hover,
+    .botones-Celular button:hover {
+        -webkit-transform: none !important;
+        -moz-transform: none !important;
+        -ms-transform: none !important;
+        transform: none !important;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1920px) {
+    .QioraFondo {
+        width: 32%;
+    }
+
+    .texto {
+        left: 65%;
+        top: 50%;
+    }
+    .botones{
+        right: 7%;
+    top: 50%;
     }
 }
