@@ -535,4 +535,26 @@ strong {
 div.show {
     opacity: 1;
     transform: translateY(0);
+
 } */
+
+@media only screen and (min-width: 1024px) and (max-width: 1920px) {
+    .cnt-s {
+        margin: 200px 0px 0px 0px;
+    }
+
+    .cnt-c {
+        padding: 84px 142px 0 86px;
+    }
+
+    .fotofondo {
+        width: 559px;
+        height: 529px;
+    }
+
+    .btn-c1 {
+        padding-top: 9%;
+        padding-left: 26%;
+        padding-right: 26%;
+    }
+}
