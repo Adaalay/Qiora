@@ -1,45 +1,45 @@
-const img = document.querySelector('#imgF');
-const panel = document.querySelector('.panel');
-const spacer = document.querySelector('.img-container');
-const maxFrame = 375;
+// const img = document.querySelector('#imgF');
+// const panel = document.querySelector('.panel');
+// const spacer = document.querySelector('.img-container');
+// const maxFrame = 375;
 
-let spacerTop;
-let spacerHeight;
-let animationStart;
-let animationEnd;
+// let spacerTop;
+// let spacerHeight;
+// let animationStart;
+// let animationEnd;
 
-function recalcularAlturas() {
-    const spacerRect = spacer.getBoundingClientRect();
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+// function recalcularAlturas() {
+//     const spacerRect = spacer.getBoundingClientRect();
+//     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    spacerTop = spacerRect.top + scrollTop;
-    spacerHeight = spacer.offsetHeight;
+//     spacerTop = spacerRect.top + scrollTop;
+//     spacerHeight = spacer.offsetHeight;
 
-    animationStart = spacerTop - window.innerHeight;
-    animationEnd = spacerTop + spacerHeight;
+//     animationStart = spacerTop - window.innerHeight;
+//     animationEnd = spacerTop + spacerHeight;
 
-    animationStart = Math.max(0, animationStart);
-}
+//     animationStart = Math.max(0, animationStart);
+// }
 
-window.addEventListener('resize', recalcularAlturas);
-window.addEventListener('load', recalcularAlturas);
-recalcularAlturas();
+// window.addEventListener('resize', recalcularAlturas);
+// window.addEventListener('load', recalcularAlturas);
+// recalcularAlturas();
 
-window.addEventListener('scroll', () => {
-    const scrollPosition = window.scrollY;
+// window.addEventListener('scroll', () => {
+//     const scrollPosition = window.scrollY;
 
-    if (scrollPosition < animationStart) {
-        img.src = `../Telecom/telefono/00001.png`;
-    } else if (scrollPosition >= animationStart && scrollPosition <= animationEnd) {
-        const progress = (scrollPosition - animationStart) / (animationEnd - animationStart);
-        const frame = Math.max(1, Math.min(maxFrame, Math.floor(progress * maxFrame) + 1));
-        const frameId = frame.toString().padStart(5, '0');
-        img.src = `../Telecom/telefono/${frameId}.png`;
-    } else {
-        const frameId = maxFrame.toString().padStart(5, '0');
-        img.src = `../Telecom/telefono/${frameId}.png`;
-    }
-});
+//     if (scrollPosition < animationStart) {
+//         img.src = `../Telecom/telefono/00001.png`;
+//     } else if (scrollPosition >= animationStart && scrollPosition <= animationEnd) {
+//         const progress = (scrollPosition - animationStart) / (animationEnd - animationStart);
+//         const frame = Math.max(1, Math.min(maxFrame, Math.floor(progress * maxFrame) + 1));
+//         const frameId = frame.toString().padStart(5, '0');
+//         img.src = `../Telecom/telefono/${frameId}.png`;
+//     } else {
+//         const frameId = maxFrame.toString().padStart(5, '0');
+//         img.src = `../Telecom/telefono/${frameId}.png`;
+//     }
+// });
 
 //tarjetas
 const cards = document.querySelectorAll('.card');
@@ -221,22 +221,21 @@ setInterval(nextSlide, 3000);
 
 // imagenes
 // Selecciona todos los div del documento
-// const images = document.querySelectorAll('div');
 
-// const observer3 = new IntersectionObserver((entries) => {
-//     entries.forEach(entry => {
-//         // const index = [...images].indexOf(entry.target); // Opcional para cascada
-//         if (entry.isIntersecting) {
-//             entry.target.style.transitionDelay = `${index * 0.1}s`; // cascada sutil
-//             entry.target.classList.add('show');
-//         } else {
-//             entry.target.style.transitionDelay = `${index * 0.1}s`;
-//             entry.target.classList.remove('show');
-//         }
-//     });
-// }, {
-//     threshold: 0.3 // Ajusta el porcentaje visible antes de animar
-// });
+const images = document.querySelectorAll('.imgWifi, .imgTitulo, .btn-i1, .p-i1-2, .p-i1-1, .S-escaleras, .item, .h1-t1, .s-mapa, .fotofondo, .h1-c1, .p-c1, .btn-c1');
+const observer3 = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        const index = [...images].indexOf(entry.target); // para cascada
+        if (entry.isIntersecting) {
+            entry.target.style.transitionDelay = `${index * 0.1}s`;
+            entry.target.classList.add('show');
+        } else {
+            entry.target.style.transitionDelay = `${index * 0.1}s`;
+            entry.target.classList.remove('show');
+        }
+    });
+}, {
+    threshold: 0.3
+});
 
-// // Observa todas las imágenes
-// images.forEach(div => observer3.observe(div));
+images.forEach(div => observer3.observe(div));

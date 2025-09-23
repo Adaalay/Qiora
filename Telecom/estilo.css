@@ -161,25 +161,73 @@ body {
     border-radius: 25px;
     padding: 5px 15px;
     font-family: 'Gordita-Bold', sans-serif;
-    ;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 }
 
-.p-i1 {
+.btn-i1.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.p-i1-1 {
     text-align: justify;
     color: white;
     font-size: clamp(12px, 1.0vw, 14px);
     padding-right: 200px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.p-i1-1.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.p-i1-2 {
+    text-align: justify;
+    color: white;
+    font-size: clamp(12px, 1.0vw, 14px);
+    padding-right: 200px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.p-i1-2.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .imgTitulo {
     width: clamp(400px, 50vw, 600px);
     height: auto;
     padding-bottom: 15%;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 }
+
+.imgTitulo.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 .imgWifi {
     width: clamp(240px, 35vw, 290px);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 }
+
+.imgWifi.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 .divimagen {
     /* padding-top: 60px; */
@@ -253,11 +301,28 @@ body {
 
 .S-escaleras {
     width: 50%;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.S-escaleras.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .s-mapa {
     width: 80%;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 }
+
+.s-mapa.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 .icono1 {
     width: 60px;
@@ -307,6 +372,17 @@ body {
     margin: 0;
     font-size: 1rem;
     color: #333;
+}
+
+.item {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.item.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .iconos-1 {
@@ -517,25 +593,15 @@ body {
 /* iconos */
 .h1-t1 {
     padding-bottom: 110px;
-}
-
-
-
-/* ====== ORIGINAL ====== */
-/* Todas las imágenes empiezan invisibles */
-/* div {
     opacity: 0;
-    transform: translateY(10px); 
-    transition: opacity 0.3s ease-out, transform 0.3s ease-out; 
+    transform: translateY(10px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 }
 
-/* Cuando entran al viewport 
-div.show {
+.h1-t1.show {
     opacity: 1;
     transform: translateY(0);
-} */
-
-
+}
 
 /* telefonoTelecom */
 /* seccionAnimación */
@@ -550,10 +616,13 @@ div.show {
 
 .img-container {
     position: sticky;
-    top: 50%;              /* en el centro */
-    transform: translateY(-50%); /* corrección vertical */
+    top: 50%;
+    /* en el centro */
+    transform: translateY(-50%);
+    /* corrección vertical */
     width: 100%;
-    height: auto;          /* que se ajuste */
+    height: auto;
+    /* que se ajuste */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -614,6 +683,14 @@ strong {
     color: #0e809b;
     font-family: 'Gordita-Bold', sans-serif;
     margin: 0;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.h1-c1.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .text-c1 {
@@ -625,6 +702,14 @@ strong {
     padding-top: 10%;
     padding-left: 30%;
     padding-right: 30%;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.btn-c1.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .btn-co1 {
@@ -650,6 +735,14 @@ strong {
 .p-c1 {
     font-size: 0.9em;
     color: #0e809b;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.p-c1.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .cnt-c {
@@ -801,4 +894,39 @@ strong {
 
 .container1 {
     animation: fadeInUp 0.8s ease-out;
+}
+
+/* ====== ORIGINAL ====== */
+/* Todas las imágenes empiezan invisibles */
+/* div {
+    opacity: 0;
+    transform: translateY(10px); 
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out; 
+}
+
+/* Cuando entran al viewport 
+div.show {
+    opacity: 1;
+    transform: translateY(0);
+} */
+
+@media only screen and (min-width: 1024px) and (max-width: 1920px) {
+    .cnt-s {
+        margin: 100px 0px 0px 0px;
+    }
+
+    .cnt-c {
+        padding: 84px 142px 0 86px;
+    }
+
+    .fotofondo {
+        width: 559px;
+        height: 529px;
+    }
+
+    .btn-c1 {
+        padding-top: 9%;
+        padding-left: 26%;
+        padding-right: 26%;
+    }
 }
