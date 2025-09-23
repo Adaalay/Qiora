@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/Q 32 negra.png" data-href-light="../img/Q 32 negra.png"
+    data-href-dark="../img/Q 32 blanca.png">
+  <title>Contacto</title>
+  <style>
+    @font-face {
+      font-family: 'Gordita-Light';
+      src: url('../Gordita/Gordita-Light.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'Gordita-Regular';
+      src: url('../Gordita/Gordita-Regular.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'Gordita-Bold';
+      src: url('../Gordita/Gordita-Bold.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'Gordita-Black';
+      src: url('../Gordita/Gordita-Black.ttf') format('truetype');
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Gordita-Regular', sans-serif;
+      /* background: linear-gradient(90deg, #babaf7, #bceef7, #ffe576, #f6a786, #babaf7, #abf5fc, #aae2aa); */
+      background-color: #fff;
+      background-size: 600% 600%;
+      animation: gradient 12s ease infinite;
+    }
+
+    .form {
+      position: sticky;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      z-index: 1;
+      height: 100vh;
+    }
+
+
+    .form-container-1 {
+      position: relative;
+      background: #fff;
+      /* Caja blanca sólida */
+      padding: 40px;
+      border-radius: 20px;
+      max-width: 600px;
+      width: 90%;
+      text-align: center;
+      z-index: 0;
+    }
+
+    /* Halo degradado */
+    .form-container-1::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      /* Distancia desde la caja blanca */
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      border-radius: inherit;
+      background: linear-gradient(90deg,
+          #babaf7,
+          #bceef7,
+          #ffe576,
+          #f6a786,
+          #babaf7,
+          #abf5fc,
+          #aae2aa);
+      background-size: 600% 600%;
+      animation: gradient 12s ease infinite;
+      z-index: -1;
+      /* Detrás de la caja blanca */
+      filter: blur(25px);
+      /* Difumina para que parezca halo */
+      opacity: 0.9;
+      /* Intensidad del halo */
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .form-container {
+      position: relative;
+      background: #fff;
+      /* Caja blanca sólida */
+      padding: 40px;
+      border-radius: 20px;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      z-index: 1;
+    }
+
+
+    h2 {
+      font-family: 'Gordita-Bold', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    }
+
+    .form-grid.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .form-grid input,
+    .form-grid select,
+    .form-grid textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #f1f1f1;
+      border-radius: 20px;
+      background: #f2f2f2;
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus,
+    input:hover,
+    select:hover,
+    textarea:hover {
+      border-color: #82939a;
+      box-shadow: 0 0 15px rgba(130, 147, 154, 0.4);
+    }
+
+    input:valid:not(:placeholder-shown),
+    select:valid:not(:placeholder-shown),
+    textarea:valid:not(:placeholder-shown) {
+      border-color: #4CAF50;
+      box-shadow: 0 0 15px rgba(76, 175, 80, 0.4);
+    }
+
+
+
+    textarea {
+      grid-column: span 2;
+      resize: none;
+      height: 100px;
+    }
+
+    button {
+      margin-top: 20px;
+      background: #333;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: #555;
+      transform: scale(1.05);
+    }
+
+    /* contacto */
+    .contacto {
+      background-color: #fff;
+      z-index: 2;
+      position: relative;
+      transform: translateY(100vh);
+      height: 100vh;
+      transition: transform 0.6s ease-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contacto.slide-up {
+      transform: translateY(0);
+    }
+
+    .footer {
+      color: black;
+    }
+
+    .footer-section {
+      display: inline-block;
+      vertical-align: top;
+      width: 60%;
+    }
+
+    .footer-section h3 {
+      font-size: 1.1rem;
+      font-weight: 'Gordita-Bold', sans-serif;
+      margin-top: 10px;
+    }
+
+    .footer-section a,
+    .footer-section p {
+      display: block;
+      color: black;
+      text-decoration: none;
+      margin: 5px 0;
+    }
+
+    .footer-section a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .footer-bottom a {
+      color: black;
+      font-size: 0.9rem;
+      text-decoration: underline;
+    }
+
+    .iconoSocial {
+      width: clamp(30px, 4vw, 40px);
+      height: clamp(30px, 4vw, 40px);
+      margin-right: 10px;
+    }
+
+    .td-social {
+      padding: 0;
+      margin-right: 10px;
+    }
+
+    .a-coreo {
+      font-family: 'Gordita-Bold', sans-serif;
+    }
+
+    .td-social:hover {
+      transform: scale(1.1);
+      transition: transform 0.3s ease;
+      background-color: transparent;
+    }
+
+    .td-social:active {
+      transform: scale(0.95);
+      transition: transform 0.3s ease;
+    }
+
+    .logoBlanco {
+      width: 40px;
+      margin: 0 auto;
+      padding-bottom: 30px;
+    }
+
+    .logo-contact {
+      width: 30%;
+    }
+
+    .logo1 {
+      height: 50px;
+      margin-top: 30px;
+    }
+
+    /* ========================== */
+    /* SECCIÓN 2 · HEADER Y NAVEGACIÓN */
+    /* ========================== */
+    .header-h {
+      text-align: center;
+      padding: 40px;
+    }
+
+    .nav-h {
+      display: flex;
+      justify-content: flex-start;
+      gap: 20px;
+      padding-left: 100px;
+      padding-bottom: 2%;
+    }
+
+    .a-h {
+      text-decoration: none;
+      color: black;
+      text-align: center;
+      padding: 10px;
+      font-size: 1.08rem;
+      display: flex;
+    }
+
+    .a-h:hover {
+      font-family: 'Gordita-Bold', sans-serif;
+      border-radius: 50px;
+      transform: scale(1.05);
+      transition: transform 0.1s;
+    }
+
+    .a-h:active {
+      transform: scale(0.90);
+      transition: transform 0.1s;
+    }
+
+    /* Dropdown contenedor */
+    .dropdown {
+      position: relative;
+      /* 👈 Necesario */
+      display: inline-block;
+    }
+
+    /* Contenido oculto */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      /* 👈 vuelve a ponerlo */
+      top: 100%;
+      /* debajo del link */
+      left: 0;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      flex-direction: column;
+    }
+
+    /* Links dentro del dropdown */
+    .dropdown-content a {
+      padding: 10px 15px;
+      text-decoration: none;
+      display: block;
+      color: black;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    /* Mostrar al pasar el mouse */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header-h">
+    <nav class="nav-h">
+      <a class="a-h" href="../index.html#idNosotros">Nosotros</a>
+
+      <!-- Dropdown -->
+      <div class="dropdown">
+        <a class="a-h" href="#">Unidades de negocio</a>
+        <div class="dropdown-content">
+          <a href="../Conecta/index.html">Conecta</a>
+          <a href="../Telecom/index.html">Telecom</a>
+        </div>
+      </div>
+
+      <a class="a-h" href="#contacto">Contacto</a>
+    </nav>
+  </header>
+  <section class="form">
+    <div class="form-container-1">
+      <!-- <form action="https://formsubmit.co/adalayaramburo@gmail.com" method="POST" class="form-container" id="form-grid"> -->
+      <form action="https://formsubmit.co/adalayaramburo@gmail.com" method="POST" class="form-container"
+        id="form-contacto">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="hidden" name="_next" value="../Qiora/index.html">
+        <input type="text" name="_honey" style="display:none">
+        <h2>CONTACTO</h2>
+        <div class="form-grid">
+
+          <!-- <label for="contact-name">Nombre*:</label> -->
+          <input type="text" id="contact-name" name="name" required placeholder="Nombre">
+          <!-- <label for="contact-email">Correo*:</label> -->
+          <input type="email" id="contact-email" name="email" required placeholder="Email">
+          <!-- <label for="contact-phone">Teléfono:</label> -->
+          <input type="text" id="contact-phone" name="phone" placeholder="Telefono">
+          <!--  <label for="contact-product">Unidad de negocio:</label> -->
+          <select id="contact-product" name="product" required>
+            <<option value="">Unidad de negocio</option>
+              <option>conecta</option>
+              <option>Telecom</option>
+              <option>Infraestructura</option>
+              <option>Capital</option>
+          </select>
+          <!-- <label for="contact-message">Mensaje*:</label> -->
+          <textarea id="contact-message" name="comments" required placeholder="Mensaje"></textarea>
+        </div>
+        <div class="form-grid">
+          <button type="submit" class="boton-enviar">Enviar</button>
+          <p id="form-status" class="estado-form"></p>
+        </div>
+      </form>
+    </div>
+    </div>
+  </section>
+
+  <section class="contacto">
+    <footer class="footer">
+      <div class="footer-section logo-contact">
+        <img src="../img/Recurso 1.png" alt="QiORA logo" class="logo1">
+        <br><br>
+        <h3>Contacto</h3>
+        <a href="tel:+523319429761">+52 33 1942 9761</a>
+        <a href="mailto:info@qiora.mx">info@qiora.mx</a>
+        <p>Guadalajara., Jal., México</p>
+      </div>
+      <div class="footer-section jobs">
+        <br>
+        <h3>¡Forma parte de QiORA!</h3>
+        <p>Con un total de más de 1,500 colaboradores en todo México.
+          <br>Únete a una empresa en crecimiento, donde el desarrollo del talento es nuestra prioridad.
+          <br>Descubre las oportunidades en nuestras redes sociales o contáctanos directamente:
+          <a class="a-coreo" href="mailto:conecta@qiora.mx">talento@qiora.mx</a>
+        </p>
+        <br><br>
+        <table>
+          <tr>
+            <td class="td-social"><a href="https://www.facebook.com/profile.php?id=61554024103201"><img
+                  src="../img/facebook.png" alt="Facebook" class="iconoSocial"></a></td>
+            <td class="td-social"><a href="https://www.linkedin.com/company/qioramx/"><img src="../img/linkedin.png"
+                  alt="LinkedIn" class="iconoSocial"></a></td>
+          </tr>
+        </table>
+        <br><br>
+        <a href="#">Términos y condiciones y Aviso de Privacidad</a>
+      </div>
+    </footer>
+  </section>
+
+  <script>
+    const form = document.querySelector('.form'); // 👈 usa el mismo nombre siempre
+    let active = false;
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        active = entry.isIntersecting;
+      });
+    }, { threshold: 0.1 });
+
+    observer.observe(form);
+
+    const scaleInicial = 1.1; // valor inicial de escala
+
+    window.addEventListener('scroll', () => {
+      if (!active) return; // solo aplica si la sección está visible
+
+      const scrollY = window.scrollY;
+      const start = form.offsetTop;
+
+      const scaleform = scaleInicial - (scrollY - start) / 3000;
+      form.style.transform = `scale(${scaleform})`;
+    });
+
+    // Validación básica antes del envío real
+    document.getElementById('form-contacto').addEventListener('submit', function (e) {
+      const name = document.getElementById('contact-name').value.trim();
+      const email = document.getElementById('contact-email').value.trim();
+      const message = document.getElementById('contact-message').value.trim();
+      const status = document.getElementById('form-status');
+
+      if (!name || !email || !message) {
+        e.preventDefault(); // evita el envío solo si hay error
+        status.textContent = "Por favor completa los campos obligatorios.";
+        status.style.color = "red";
+      }
+    });
+
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const links = document.querySelectorAll('link[rel="icon"]');
+
+    const updateIcon = () => {
+      const isDark = mediaQuery.matches;
+      const dataKey = isDark ? 'hrefDark' : 'hrefLight';
+
+      links.forEach(link => {
+        link.href = link.dataset[dataKey];
+      });
+    };
+
+    // Ejecutar al cargar la página
+    updateIcon();
+
+    // Escuchar cambios de modo
+    mediaQuery.addEventListener('change', updateIcon);
+
+
+    // imagenes
+    // Selecciona todos los div del documento
+
+    const images = document.querySelectorAll('.form-grid');
+    const observer3 = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const index = [...images].indexOf(entry.target); // para cascada
+        if (entry.isIntersecting) {
+          entry.target.style.transitionDelay = `${index * 0.1}s`;
+          entry.target.classList.add('show');
+        } else {
+          entry.target.style.transitionDelay = `${index * 0.1}s`;
+          entry.target.classList.remove('show');
+        }
+      });
+    }, {
+      threshold: 0.3
+    });
+    images.forEach(div => observer3.observe(div));
+
+  </script>
+</body>
+
+</html>
