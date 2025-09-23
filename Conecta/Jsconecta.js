@@ -132,5 +132,21 @@ const observer3 = new IntersectionObserver((entries) => {
 }, {
     threshold: 0.3
 });
-
 images.forEach(div => observer3.observe(div));
+
+
+// Función para subir al inicio
+window.addEventListener("scroll", function () {
+    const btn = document.getElementById("btnScrollTop");
+    if (window.scrollY > 200) {
+        btn.style.display = "block";
+    } else {
+        btn.style.display = "none";
+    }
+});
+document.getElementById("btnScrollTop").onclick = function () {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+};
