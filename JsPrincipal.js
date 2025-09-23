@@ -9,20 +9,34 @@ let spacerHeight;
 let animationStart;
 let animationEnd;
 
+// ** ⚡️ FUNCIÓN DE PRECARGA DE IMÁGENES ⚡️ **
+function precargarImagenes() {
+    for (let i = 1; i <= maxFrame; i++) {
+        const frameId = i.toString().padStart(5, '0');
+        const imgPreload = new Image();
+        imgPreload.src = `../Qiora/QioraTelefono/${frameId}.png`;
+    }
+    console.log('Precarga de imágenes finalizada.');
+}
+
 function recalcularAlturas() {
-    // ⚡ offsetTop es más estable que boundingClientRect en este caso
     spacerTop = spacer.offsetTop;
     spacerHeight = spacer.offsetHeight;
 
     animationStart = spacerTop - window.innerHeight;
     animationEnd = spacerTop + spacerHeight;
 
-    // nunca puede ser negativo
     animationStart = Math.max(0, animationStart);
 }
 
 window.addEventListener('resize', recalcularAlturas);
-window.addEventListener('load', recalcularAlturas);
+
+// ** ⚡️ LLAMADA A LA FUNCIÓN DE PRECARGA EN EL EVENTO 'load' ⚡️ **
+window.addEventListener('load', () => {
+    recalcularAlturas();
+    precargarImagenes();
+});
+
 recalcularAlturas();
 
 window.addEventListener('scroll', () => {
