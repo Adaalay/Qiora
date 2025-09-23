@@ -596,5 +596,19 @@ mediaQuery.addEventListener('change', updateIcon);
 updateIcon();
 
 
-
+// Función para subir al inicio
+window.addEventListener("scroll", function () {
+    const btn = document.getElementById("btnScrollTop");
+    if (window.scrollY > 200) {
+        btn.style.display = "block";
+    } else {
+        btn.style.display = "none";
+    }
+});
+document.getElementById("btnScrollTop").onclick = function () {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+};
 

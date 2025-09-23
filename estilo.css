@@ -1405,6 +1405,34 @@ body {
     }
 } */
 
+ /* === Botón flotante "Subir" === */
+ #btnScrollTop {
+   position: fixed;
+   bottom: 30px;
+   right: 30px;
+   border: none;
+   outline: none;
+   background-color: gray;
+   color: white;
+   cursor: pointer;
+   padding: 10px 16px;
+   border-radius: 80%;
+   font-size: 20px;
+   display: none;
+   /* oculto por defecto */
+   transition: background-color 0.3s ease, transform 0.3s ease;
+   position: fixed;
+   z-index: 9999 !important;
+   opacity: 1 !important;
+   visibility: visible !important;
+ }
+
+ #btnScrollTop:hover {
+   background-color: #555;
+   transform: scale(1.1);
+ }
+
+
 .fondo-p {
     background: radial-gradient(circle at 21.25% 0%, #B4E5F3 0%, 11.55%, rgba(180, 229, 243, 0) 35%),
         radial-gradient(circle at 83.67% 1.67%, #DEFFA6 0%, 17.5%, rgba(222, 255, 166, 0) 35%),
