@@ -895,6 +895,33 @@ strong {
 .container1 {
     animation: fadeInUp 0.8s ease-out;
 }
+ /* === Botón flotante "Subir" === */
+ #btnScrollTop {
+   position: fixed;
+   bottom: 30px;
+   right: 30px;
+   border: none;
+   outline: none;
+   background-color: gray;
+   color: white;
+   cursor: pointer;
+   padding: 10px 16px;
+   border-radius: 80%;
+   font-size: 20px;
+   display: none;
+   /* oculto por defecto */
+   transition: background-color 0.3s ease, transform 0.3s ease;
+   position: fixed;
+   z-index: 9999 !important;
+   opacity: 1 !important;
+   visibility: visible !important;
+ }
+
+ #btnScrollTop:hover {
+   background-color: #555;
+   transform: scale(1.1);
+ }
+
 
 /* ====== ORIGINAL ====== */
 /* Todas las imágenes empiezan invisibles */
