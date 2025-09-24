@@ -605,31 +605,58 @@ document.getElementById("btnScrollTop").onclick = function () {
     });
 };
 
+<script>
 document.addEventListener("DOMContentLoaded", () => {
-  const images = document.querySelectorAll("img");
-  let loadedImages = 0;
+    const images = document.querySelectorAll("img");
+    let loaded = 0;
 
-  images.forEach((img) => {
-    if (img.complete) {
-      loadedImages++;
+    // 🔹Inicio del cronómetro
+    const startTime = performance.now();
+
+    function hideLoading() {
+        const loader = document.getElementById("loading");
+
+        // 🔹Tiempo total en segundos
+        const endTime = performance.now();
+        const totalSeconds = ((endTime - startTime) / 1000).toFixed(2);
+        console.log("⏱ Tiempo de carga total:", totalSeconds, "segundos");
+
+        // (Opcional) mostrar en pantalla
+        const msg = document.createElement("div");
+        msg.textContent = `Tiempo de carga: ${totalSeconds}s`;
+        msg.style.position = "fixed";
+        msg.style.bottom = "20px";
+        msg.style.right = "20px";
+        msg.style.padding = "8px 12px";
+        msg.style.background = "rgba(0,0,0,0.7)";
+        msg.style.color = "#fff";
+        msg.style.fontFamily = "sans-serif";
+        msg.style.borderRadius = "6px";
+        msg.style.zIndex = "10000";
+        document.body.appendChild(msg);
+
+        loader.classList.add("fade-out");
+        setTimeout(() => loader.remove(), 800);
+    }
+
+    function check() {
+        if (loaded === images.length) hideLoading();
+    }
+
+    if (images.length === 0) {
+        hideLoading();
     } else {
-      img.addEventListener("load", () => {
-        loadedImages++;
-        if (loadedImages === images.length) {
-          hideLoading();
-        }
-      });
+        images.forEach(img => {
+            if (img.complete) {
+                loaded++;
+                check();
+            } else {
+                img.addEventListener("load", () => { loaded++; check(); });
+                img.addEventListener("error", () => { loaded++; check(); });
+            }
+        });
     }
-  });
-
-  if (loadedImages === images.length) {
-    hideLoading();
-  }
-
-  function hideLoading() {
-    const loading = document.getElementById("loading");
-    if (loading) {
-      loading.style.display = "none";
-    }
-  }
 });
+</script>
+
+
