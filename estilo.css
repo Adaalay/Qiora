@@ -129,6 +129,12 @@ body {
     object-fit: cover;
     z-index: -1;
 }
+.gif{
+    width: 20%;
+    height: auto;
+    object-fit: cover;
+}
+    
 
 #divFondo {
     display: flex;
@@ -1376,4 +1382,5 @@ body {
         right: 5%;
         top: 50%;
     }
+
 }
