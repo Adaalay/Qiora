@@ -1427,15 +1427,6 @@ body {
 }
 #video_background,
 #videoTelefono {
-    transform: translate3d(0, 0, 0) !important;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    will-change: transform;
-
-    /*
-     * Fuerza a Chrome a tratar el video como parte
-     * de la composición de la página.
-     */
     filter: brightness(1.00001);
 }
 .inicio,
