@@ -57,7 +57,7 @@ body {
 .inicio {
     width: 100%;
     height: 100vh;
-    padding: 4% 16%;
+    padding: 4% 10%;
     display: flex;
     align-items: center;
 }
@@ -71,7 +71,7 @@ body {
 
 .header-h {
     text-align: center;
-    padding: 4% 16%;
+    padding: 4% 10%;
     z-index: 10;
     position: absolute;
 }
@@ -1477,14 +1477,11 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-
     width: fit-content;
-
     color: #55ff62;
     font-family: 'Gordita-Bold', sans-serif;
     font-size: 1.2rem;
     text-decoration: none;
-
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
@@ -1496,17 +1493,13 @@ body {
 .icon-whatsapp {
     width: 22px;
     height: 22px;
-
     fill: currentColor;
-
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
     padding: 0 !important;
-
     display: block;
     flex-shrink: 0;
-
     transition: transform 0.25s ease, filter 0.25s ease;
 }
 
@@ -1735,9 +1728,9 @@ section {
 
 /* HERO */
 .inicio {
-    min-height: 720px;
+    min-height: 550px;
     height: 100vh;
-    padding: clamp(40px, 4vw, 80px) clamp(70px, 12vw, 240px);
+    /* padding: clamp(40px, 4vw, 80px) clamp(70px, 12vw, 240px); */
 }
 
 .inicio-contenedor {
@@ -1933,8 +1926,8 @@ section {
 /* FORTALEZA */
 .Fortaleza {
     height: auto;
-    min-height: clamp(650px, 100vh, 900px);
-    padding: clamp(60px, 7vw, 110px) clamp(40px, 6vw, 100px);
+    min-height: clamp(550px, 100vh, 700px);
+    padding: clamp(50px, 7vw, 100px) clamp(30px, 6vw, 90px);
 }
 
 .h1-Fortaleza {
@@ -1972,10 +1965,10 @@ section {
 /* ================================================= */
 
 @media (max-width: 1440px) {
-    .inicio {
+    /* .inicio {
         padding-left: 10%;
         padding-right: 10%;
-    }
+    } */
 
     .comunicacionSpan {
         font-size: 3.8rem;
@@ -2017,10 +2010,10 @@ section {
 /* ================================================= */
 
 @media (max-width: 1280px) {
-    .inicio {
+    /* .inicio {
         padding-left: 8%;
         padding-right: 8%;
-    }
+    } */
 
     .inicio-contenedor {
         gap: 50px;
@@ -2113,9 +2106,9 @@ section {
 
 @media (max-width: 1100px) {
     .inicio {
-        min-height: 680px;
-        padding-left: 6%;
-        padding-right: 6%;
+        min-height: 550px;
+        /* padding-left: 6%;
+        padding-right: 6%; */
     }
 
     .inicio-contenedor {
